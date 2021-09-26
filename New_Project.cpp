@@ -1,13 +1,17 @@
 #include <iostream>
+#include <vector>
+
+
 using namespace std;
 
 int main()
 {
+mark:
 
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	
+	/*
 
 	char ch = 'a';
 
@@ -17,10 +21,6 @@ int main()
 	int* t = &a; // Ссылка адрес
 
 	int** tt = &t;
-
-
-
-
 
 	cout << &a << "  = " << a << " | HEX = " << "\n";
 
@@ -51,12 +51,98 @@ int main()
 	int aa = 5;
 
 	t[aa] = 1000; // *(t + 1*sizeof(int)) = 1000;
+	cout << t << " | ";
+	cout << (t + 1) << " = ";
+
+
 	cout << (t + aa) << " = ";
 	cout << &(t[aa]);
 
 
+
+
 	delete [] t;
+
+	int n; cin >> n;
+
+	int* dynamic_mas;
+	dynamic_mas = new int[n];
+	delete[] dynamic_mas; // Мы удаляем сам массив, int* остаётся
+
+	dynamic_mas = new int[n * 10];
+	delete[] dynamic_mas;
+
+	dynamic_mas = &n;
+
+	int mas[1000]; // Статический массивы
+
+	char ch_mas[1000];
+
+	// free malloc
+
+	std::vector<int> v(n);
+
+	cin >> v[100];
+	//cout << v[100];
+
+	*/
+
+	int a = 1, b = 2;
+	cin >> a >> b;
+	int& name = a; // Псевдоним для функций
+
+	int* ptr = &a;
+
+
+
+	cout << a << "  " << name<< " "<< *ptr <<"\n";
+
+	name = 2000;
+
+	cout << a << "  " << name << " " << *ptr << "\n";
+
+	//goto(got);
+
+	if (a == b)
+	{
+		cout << "equ" << "\n";
+	}
+	else
+	{
+		cout << "no equ" << "\n";
+	}
+
+	cout << "\n";
+
+	a == b ? cout << "equ " : (++a, cout << "no equ ");
+	cout << a;
 	
+	//cout << (a == b ? "equ" : "no equ"); //[]
+
+	//goto();
+
+
+	cin >> a;
+	switch (a)
+	{
+		case 1:
+
+
+			break;
+		case 2:
+
+
+		case 4:
+
+
+			break;
+		default: // else
+
+
+			break;
+	}
+
+
 
 
 	return 0;
