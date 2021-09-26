@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="New_Project.cpp" />
+    <ClCompile Include="solve_2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
