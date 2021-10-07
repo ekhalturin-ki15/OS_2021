@@ -24,10 +24,10 @@ void cin_vector(vector<int>& eng)
     }
 }
 
-void cout_vector(vector<int>& v)
+void cout_vector(const vector<int>& v)
 {
     for (int i = 0; i < v.size(); ++i)
-        cout << ++v[i] << "  ";
+        cout << v[i] << "";
     cout << "\n";
 }
 
@@ -94,24 +94,34 @@ bool intersect(int a, int b)
     return false;
 }
 
+void rect(vector<int>& v, const int& step, const int& sys_s, const int& n)
+{
+    if (step == n)
+    {
+        cout_vector(v);
+        //rect()
+        return;
+    }
+
+    for (int i = 0; i < sys_s; ++i)// 0 1 2 3 4
+    {
+
+        v[step] = i;
+        rect(v, step + 1, sys_s, n);
+    }
+
+    return;
+}
+
+
 
 int main()
 {
-    int a, b;
+    int n, c;
+    cin >> n >> c;
+    vector<int> v(n);
 
-    cin >> a >> b;
-
-    intersect(a, b);
-
-
-    if (intersect(a, b))
-    {
-        cout << "YES";
-    }
-    else
-    {
-        cout << "NO";
-    }
+    rect(v, 0, c, n);
 
 
 }
