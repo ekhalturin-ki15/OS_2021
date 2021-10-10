@@ -5,6 +5,27 @@
 
 using namespace std;
 
+inline void function_1()
+{
+	cout << "Hello" << "\n";
+}
+
+void function_2(int a, int b)
+{
+	cout << a << " " << b <<"\n";
+}
+
+int function_3()
+{
+	return 5 * 5;
+}
+
+int function_4(string s)
+{
+	return s.size();
+}
+
+
 
 
 
@@ -13,112 +34,60 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	int n;
-	cin >> n;
-	//vector<int> v(n);
 
-	const int max_v = 1e6;
-	vector<int> interval(max_v);
+	function_1(); // void
 
-
-	for (int i = 0; i < n; ++i)
+	/*
 	{
-		int it;
-		//cin >> v[i];
-		cin >> it;
-		++interval[it];
+		cout << "Hello";
 	}
+	*/
 
-	for (int i = max_v -1 ; i >=0 ; --i)
+	function_2(8, 15); // void
+
+	/*
 	{
-		for (int j = 0; j < interval[i]; ++j)
+		int 093@48643_a; int 093@4643_b;
+
+		093@48643_a = 8;
+		093@4643_b = 15;
+
+		cout << 093@48643_a << " " << 093@4643_b <<"\n";
+	}
+	*/
+
+
+	function_3();
+
+	/*
 		{
-			cout << i << " ";
+			5 * 5;
 		}
+	*/
+
+	int a = 10;
+	a += function_3();
+
+	/*
+		{
+			a += 5 * 5;
+		}
+	*/
 
 
-	}
+	int size;
 
+	size = function_4("hello c++");
 
+	/*
+		{
+			string s;
 
+			s = "hello c++";
 
-
-
-
-
-
-
-	// Сортировка подсчётом
-	//  0 - 1000000
-
-	//int n;
-	//cin >> n;
-
-	//vector< int > v(n); // vector - структура (класс)
-	//// (public)	Структура - набор данных <-> функций (для хранения данных (контейнера))
-	//// == (private) Класс - набор данных <-> функций (логическая обработка данных) __name
-
-	////for (int i = 0; i < n; ++i) cin >> v[i];
-
-
-	//vector < int > p;
-
-	//int range, n_min = 1 << 30, n_max = -(1 << 30);
-
-	//for (auto& it : v)
-	//{
-	//	cin >> it;
-
-	//	//if (n_min > it) n_min = it;
-	//	//else n_min = n_min;
-
-	//	n_min = std::min(n_min, it);
-
-	//	n_max = std::max(n_max, it);
-	//}
-
-	//range = n_max - n_min + 1;
-
-	//p.resize(range);
-
-	//for (int i = 0; i < n; ++i)
-	//{
-	//	const int& it = v[i];
-	//	++p[it - n_min];
-	//}
-
-
-	//for (int i = 0; i < range; ++i)
-	//{
-	//	for (int j = 0; j < p[i]; ++j)
-	//	{
-	//		cout << i + n_min << " ";
-	//	}
-
-
-	//}
-
-
-
-	/*for (int i =0; i < n; ++i)
-	{
-		int& it = v[i];
-		cin >> it;
-	}*/
-
-	//int obj = 10;
-	//int& q = obj; // obj для Чтение и Запись
-	//q = 1000;
-
-
-	//int res = obj; // obj для Чтение
-
-
-
-
-
-
-
+			size = s.size();
+		}
+	*/
 
 
 
