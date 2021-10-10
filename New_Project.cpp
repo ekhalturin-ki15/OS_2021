@@ -5,90 +5,55 @@
 
 using namespace std;
 
-inline void function_1()
-{
-	cout << "Hello" << "\n";
-}
 
-void function_2(int a, int b)
+void cout_ans(const vector<int>& digit, int now_size)
 {
-	cout << a << " " << b <<"\n";
-}
+	for (int i = 0; i < now_size; ++i)
+		cout << digit[i] << " ";
 
-int function_3()
-{
-	return 5 * 5;
-}
+	cout << "\n";
 
-int function_4(string s)
-{
-	return s.size();
+	return;
 }
 
 
+// step - ячейка, куда записываем
+// number - сколько осталось
+// max_choose - ранее макс исп число
+// digit - записываем ответ
 
+void recursion(int step, int number, int max_choose, vector<int>& digit)
+{
+	if (number == 0)
+	{
+		cout_ans(digit, step);
+		return;
+	}
 
+	int upper_limit = min(number, max_choose);	//5 != 3 2
+	for (int now_number = 1; now_number <= upper_limit; ++now_number)
+	{
+		digit[step] = now_number;
+		recursion(step + 1, number - now_number, now_number, digit);
+	}
+
+	return;
+}
 
 int main()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
+	int n;
 
-	function_1(); // void
+	cin >> n;
 
-	/*
-	{
-		cout << "Hello";
-	}
-	*/
+	vector<int> v(n);
 
-	function_2(8, 15); // void
+	//recursion(0, n, n, v);
 
-	/*
-	{
-		int 093@48643_a; int 093@4643_b;
-
-		093@48643_a = 8;
-		093@4643_b = 15;
-
-		cout << 093@48643_a << " " << 093@4643_b <<"\n";
-	}
-	*/
-
-
-	function_3();
-
-	/*
-		{
-			5 * 5;
-		}
-	*/
-
-	int a = 10;
-	a += function_3();
-
-	/*
-		{
-			a += 5 * 5;
-		}
-	*/
-
-
-	int size;
-
-	size = function_4("hello c++");
-
-	/*
-		{
-			string s;
-
-			s = "hello c++";
-
-			size = s.size();
-		}
-	*/
-
-
+	// n = 3
+	//recursion(0, 3, 3, { 0, 0, 0 })
 
 }
