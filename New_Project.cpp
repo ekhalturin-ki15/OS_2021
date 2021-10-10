@@ -5,55 +5,76 @@
 
 using namespace std;
 
-
-void cout_ans(const vector<int>& digit, int now_size)
+void fun_cout(int i)
 {
-	for (int i = 0; i < now_size; ++i)
-		cout << digit[i] << " ";
-
-	cout << "\n";
-
-	return;
-}
-
-
-// step - ячейка, куда записываем
-// number - сколько осталось
-// max_choose - ранее макс исп число
-// digit - записываем ответ
-
-void recursion(int step, int number, int max_choose, vector<int>& digit)
-{
-	if (number == 0)
+	if (i <= 3)
 	{
-		cout_ans(digit, step);
+		cout << i;
+		fun_cout(i + 1);
+	}
+	else
 		return;
-	}
 
-	int upper_limit = min(number, max_choose);	//5 != 3 2
-	for (int now_number = 1; now_number <= upper_limit; ++now_number)
-	{
-		digit[step] = now_number;
-		recursion(step + 1, number - now_number, now_number, digit);
-	}
-
-	return;
 }
+
+
 
 int main()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	int n;
+	for (int i = 0; i <= 3; ++i)
+	{
+		cout << i;
+	}
+	cout << "\n";
 
-	cin >> n;
+	//-------- - **------
+	/*
+		cout << 0;
+		cout << 1;
+		cout << 2;
+		cout << 3;
+	*/
 
-	vector<int> v(n);
+	fun_cout(0);
+	cout << "\n";
 
-	//recursion(0, n, n, v);
+	{
+		int i;
+		i = 0;
+		cout << 0;
+		// fun_cout(1);
+		{
+			int i;
+			i = 1;
+			cout << 1;
+			// fun_cout(2);
+			{
+				int i;
+				i = 2;
+				cout << 2;
+				// fun_cout(3);
+				{
+					int i;
+					i = 3;
+					cout << 3;
+					//fun_cout(4);
+					{
+						int i;
+						i = 4;
+					}
+					
 
-	// n = 3
-	//recursion(0, 3, 3, { 0, 0, 0 })
+
+
+				}
+
+			}
+
+		}
+	}
+
 
 }
