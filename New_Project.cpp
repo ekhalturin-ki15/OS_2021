@@ -2,107 +2,110 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <tuple>
 
 using namespace std;
 
-enum Stage
+
+struct human
 {
-	pause, start, end = 1, strange
+	int a, b, c;
 };
 
-enum Champer
-{
-	angry, hunger
-};
-
-
+template <typename Type>
 struct Array
 {
-	int* date;
+	//Array() = delete;
 
+	~Array()
+	{
+		delete	[]	data;
+	}
 
+	Array()
+	{
+		this->data	= nullptr;
+	}
 
+	Array(unsigned int size)
+	{
+		this->data = nullptr;
+		this->Resize(size);
+	}
+
+	Type* data = 0;
+
+	void Resize(unsigned int size)
+	{
+		delete[] data;
+		data = new Type[size];
+	}
 
 };
 
-
-struct Human
+void func()
 {
 
-private:
-	string cash; // поля
-	string name; // поля
-	string sur_name;// поля
+}
 
-	int age;// поля
-
-public:
-
-
-	Champer my_champer;// поля
-
-	void CinDate() // методы
-	{
-		int a;
-		cin >> name >> sur_name >> age >> a >> cash;
-
-		my_champer = static_cast<Champer>(a);
-
-	}
-
-	string OutDate_1() // Метод
-	{
-		string name = "404";
-		string ret = name + " " + sur_name + "\n";
-
-
-		return ret;
-	}
-	
-	
-	string OutDate_2() // Метод
-	{
-		string name = "404";
-		string ret = this->name + " " + sur_name + "\n";
-		//(*this).name; == this->name;
-
-		(*this).cash = 1000;
-
-		return ret;
-	}
-
-} first;
-
-
-
-
-struct New_Struct
+void func(int a)
 {
-	int a;
-	int b, c;
-};
+
+}
+
 
 int main()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	New_Struct new_struct; /*экземпляр класс*/
+	{
+		Array<int> mas;
+		mas.Resize(50);
+		mas.Resize(100);
 
-	//cin >> new_struct.a >> new_struct.b >> new_struct.c;
+		Array<string> s_mas(100);
+		//s_mas.Resize(10);
 
-	//New_Struct second_struct;
+		func();
+		func(10);
 
-	//cin >> second_struct.a >> second_struct.b >> second_struct.c;
 
-	Human my_human, my_human_2;
 
-	my_human.CinDate();
 
-	cout << my_human.OutDate_1();
+	}
 
-	cout << my_human.OutDate_2();
 
-	//my_human_2.CinDate();
+	human* h;
+	h = new human[100];
+	h[5].a = 100;
+
+	int a, b, c;
+
+	tuple<int, int, int> t(a,b,c);
+
+	auto [xx, yy, zz] = t;
+
+	get<0>(t) = 10;
+
+	pair<int, int> pr(a, b);
+
+	vector<int> l(10), r(10);
+
+		swap(l[0], l[6]);
+		swap(r[0], r[6]);
+
+	vector<pair<int, int>> lr(10);
+		swap(lr[0], lr[6]);
+
+
+	pr.first = 100;
+	cout << pr.second;
+
+
+	pair<int, int> one_pair(10, 15);
+	auto [x, y] = one_pair;
+
+	
 
 }
