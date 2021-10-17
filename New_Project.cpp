@@ -1,57 +1,21 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <cmath>
-#include <tuple>
+#include <fstream>
+#include <algorithm>
+#include <list>
 
 using namespace std;
 
+typedef vector<vector<int>> matrix;
 
-struct human
+
+
+struct Str
 {
-	int a, b, c;
+	long long a, b, c;
 };
 
-template <typename Type>
-struct Array
-{
-	//Array() = delete;
-
-	~Array()
-	{
-		delete	[]	data;
-	}
-
-	Array()
-	{
-		this->data	= nullptr;
-	}
-
-	Array(unsigned int size)
-	{
-		this->data = nullptr;
-		this->Resize(size);
-	}
-
-	Type* data = 0;
-
-	void Resize(unsigned int size)
-	{
-		delete[] data;
-		data = new Type[size];
-	}
-
-};
-
-void func()
-{
-
-}
-
-void func(int a)
-{
-
-}
 
 
 int main()
@@ -59,53 +23,63 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	{
-		Array<int> mas;
-		mas.Resize(50);
-		mas.Resize(100);
+	matrix a;
+	matrix b;
 
-		Array<string> s_mas(100);
-		//s_mas.Resize(10);
+	//const_cast
 
-		func();
-		func(10);
+	string s = "3434";
 
+	vector<int> v({ 999, 1, 5, 3 ,6 ,3 ,4 ,5 ,6 ,23 ,21, 10000});
 
+	//v.size();
 
-
-	}
+	v.push_back(10); 
 
 
-	human* h;
-	h = new human[100];
-	h[5].a = 100;
+	// random iterator
+	// Самый лучший доступ за O(1)
+	// ++ -- += 5 -=20
 
-	int a, b, c;
+	// between iterator
+	// ++ --
 
-	tuple<int, int, int> t(a,b,c);
+	// forward iterator
+	// ++
 
-	auto [xx, yy, zz] = t;
-
-	get<0>(t) = 10;
-
-	pair<int, int> pr(a, b);
-
-	vector<int> l(10), r(10);
-
-		swap(l[0], l[6]);
-		swap(r[0], r[6]);
-
-	vector<pair<int, int>> lr(10);
-		swap(lr[0], lr[6]);
+	// IO iterator
+	// cin  cout
 
 
-	pr.first = 100;
-	cout << pr.second;
 
+	//vector<int> st;
+	//vector<int>::iterator it = st.begin();
+	//int* it2 = &st[0];
 
-	pair<int, int> one_pair(10, 15);
-	auto [x, y] = one_pair;
+	cout << *v.begin() << " ";
+
+	sort(v.begin(), v.end());
+
+	cout << *v.begin() << " ";
+
+	vector<int>::iterator it = v.end();
+	cout << *(--v.end()) << " ";
+	//std::sort();
+
+	cout << sizeof(Str);
+
+	v.size();
+	
+	//vector<int>::reverse_iterator rit = v.rbegin();
+
+	cout << " " << *(v.rbegin()) << " " << *(--v.rend());
+
+	list<int> l; // between it
+
 
 	
+
+
+
 
 }
