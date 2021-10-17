@@ -40,77 +40,63 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
+	list<int> ls;
 
-	auto a = 5ull;
-	//list<int> ls({ 5, 6, 7, 8, 9, 10, 11, 9, 1, 9, 23, 43, 54, 9, 64});
+	ls.insert(ls.begin(), 20);
 
-	////list<int>::iterator it = find(ls.begin(), ls.end(), 123);
-
-	//fuct(ls);
-
-	//ls.insert(ls.begin(), 100);
-
-	//ls.insert(ls.end(), 100);
+	set<int, greater<int>> st; // Красно-черное дерево
 
 
-	//forward_list<int> lsw;
+	int l, r;
+	//if (!(l < r) && !(r < l)) // ==
 
-	//vector<int> v;
-	//sort(v.begin(), v.end());
+	st.insert(1000);
+	st.insert(20);
+	st.insert(5);
+	st.insert(50);
+	st.insert(20);
+	st.insert(5);
+	st.insert(50);
+	st.insert(4);
+	st.insert(1000);
 
+	set<int>::iterator it;
 
-	////sort(ls.begin(), ls.end());
-	//ls.sort();
+	st.erase(50);
 
+	cout << "\n"; for (auto it : st) cout << it << " ";
 
-	//list<int>::iterator it = ls.begin();
-	//cout << "\n";
-	//for (; it != ls.end(); ++it)
-	//{
-	//	cout << (*it) << " ";
-	//}
+	cout<< "\n"<<st.count(999);
 
-	queue<int> q({3,4,3,-23,32,59,29,32});
+	//[] random
 
-	q.push(2);
-	q.push(1);
-	q.push(4);
+	// set between iterator
+	
 
-	q.pop(); q.pop(); q.pop(); q.pop();
-	cout << q.front();
+	multiset<int> mst;
 
-	string s = "3435435";
+	mst.insert(1000);
+	mst.insert(20);
+	mst.insert(5);
+	mst.insert(50);
+	mst.insert(20);
+	mst.insert(5);
+	mst.insert(50);
+	mst.insert(4);
+	mst.insert(1000);
 
-	s = s + s;
+	multiset<int>::iterator i2;
 
+	mst.erase(50);
 
-	stack<int> st;
-
-	//for (auto it : q) cout << it << " ";
-
-	st.push(10); st.push(10); st.push(10); st.push(10);
-	st.pop();
-
-	st.top();
-
-
-	vector<int> v({435435,324,324,324}); // --insert --erase
-
-	v.push_back(100); // O(1)
-
-	v.pop_back(); v.pop_back();
-
-	v.front();
-
-	v.back();
+	cout << "\n"; for (auto i2 : mst) cout << i2 << " ";
 
 
-	deque<int> d;
+	mst.erase(20);
 
-	//d[10];
-	//d.push_front();
-	//d.pop_front();
+	cout << "\n"; for (auto i2 : mst) cout << i2 << " ";
 
+	cout << "\n" << mst.count(1000);
 
 
 }
