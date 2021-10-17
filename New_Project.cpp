@@ -10,11 +10,24 @@ using namespace std;
 typedef vector<vector<int>> matrix;
 
 
-
-struct Str
+void fuct(list<int>& ls)
 {
-	long long a, b, c;
-};
+	list<int>::iterator it = ls.begin();
+	for (; it != ls.end(); )
+	{
+		list<int>::iterator next_it = it;
+		++next_it;
+
+
+		if ((*it) == 9)
+			ls.erase(it);
+		else
+			cout << (*it) << " ";
+
+
+		it = next_it;
+	}
+}
 
 
 
@@ -23,62 +36,34 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	matrix a;
-	matrix b;
+	list<int> ls({ 5, 6, 7, 8, 9, 10, 11, 9, 1, 9, 23, 43, 54, 9, 64});
 
-	//const_cast
+	//list<int>::iterator it = find(ls.begin(), ls.end(), 123);
 
-	string s = "3434";
+	fuct(ls);
 
-	vector<int> v({ 999, 1, 5, 3 ,6 ,3 ,4 ,5 ,6 ,23 ,21, 10000});
+	ls.insert(ls.begin(), 100);
 
-	//v.size();
-
-	v.push_back(10); 
+	ls.insert(ls.end(), 100);
 
 
-	// random iterator
-	// Самый лучший доступ за O(1)
-	// ++ -- += 5 -=20
-
-	// between iterator
-	// ++ --
-
-	// forward iterator
-	// ++
-
-	// IO iterator
-	// cin  cout
-
-
-
-	//vector<int> st;
-	//vector<int>::iterator it = st.begin();
-	//int* it2 = &st[0];
-
-	cout << *v.begin() << " ";
-
+	vector<int> v;
 	sort(v.begin(), v.end());
 
-	cout << *v.begin() << " ";
 
-	vector<int>::iterator it = v.end();
-	cout << *(--v.end()) << " ";
-	//std::sort();
-
-	cout << sizeof(Str);
-
-	v.size();
-	
-	//vector<int>::reverse_iterator rit = v.rbegin();
-
-	cout << " " << *(v.rbegin()) << " " << *(--v.rend());
-
-	list<int> l; // between it
+	//sort(ls.begin(), ls.end());
+	ls.sort();
 
 
-	
 
+
+
+	list<int>::iterator it = ls.begin();
+	cout << "\n";
+	for (; it != ls.end(); ++it)
+	{
+		cout << (*it) << " ";
+	}
 
 
 
