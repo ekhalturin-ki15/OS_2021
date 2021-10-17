@@ -138,6 +138,35 @@ int main()
 
 
 	unordered_map<int, int> um;
+
+	string a = "0";
+	string a1= "1";
+	string a2 = "2";
+	//...
+
+	string a10000 = "100004353456436546546";
+
+	int b = 100, b1 = 1;
+	//....
+	int b10000 = 10000;
+
+	um[a] = b;
+
+
+	//На самом деле
+	vector<vector<int>> vv(10);
+
+	vv[a.size()].push_back(b); // 
+	vv[a1.size()].push_back(b1);
+	//...
+	vv[a10000.size()].push_back(b10000);
+
+	//
+
+
+
+
+
 	um[2] = 10;
 	um[10] = um[2] * um[2];
 
@@ -151,5 +180,14 @@ int main()
 	{
 		cout << it.first << " " << it.second << "\n";
 	}
+
+
+
+	priority_queue<int> pq = { 243, 3, 3,4 , -12, 3, 5, 3,50 };
+
+	pq.push(10);
+	pq.pop();
+	cout<< pq.top();
+
 
 }
