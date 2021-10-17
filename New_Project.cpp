@@ -4,6 +4,8 @@
 #include <fstream>
 #include <algorithm>
 #include <list>
+#include <forward_list>
+#include <queue>
 
 using namespace std;
 
@@ -47,15 +49,14 @@ int main()
 	ls.insert(ls.end(), 100);
 
 
+	forward_list<int> lsw;
+
 	vector<int> v;
 	sort(v.begin(), v.end());
 
 
 	//sort(ls.begin(), ls.end());
 	ls.sort();
-
-
-
 
 
 	list<int>::iterator it = ls.begin();
@@ -65,6 +66,14 @@ int main()
 		cout << (*it) << " ";
 	}
 
+	queue<int> q({3,4,3,-23,32,59,29,32});
 
+	q.push(2);
+	q.push(1);
+	q.push(4);
+
+
+	q.pop(); q.pop(); q.pop(); q.pop();
+	cout << q.front();
 
 }
