@@ -8,6 +8,9 @@
 #include <queue>
 #include <stack>
 #include <set>
+#include <map>
+#include <unordered_map>
+
 
 using namespace std;
 
@@ -90,7 +93,7 @@ int main()
 	mst.erase(50);
 
 	cout << "\n"; for (auto i2 : mst) cout << i2 << " ";
-
+	//mst[0];
 
 	mst.erase(20);
 
@@ -98,5 +101,55 @@ int main()
 
 	cout << "\n" << mst.count(1000);
 
+	map<int, int> m; // set<pair<int,int>> 
+
+	// []
+
+
+	m[10] = 8;
+
+	m[100] = 1;
+
+	m[1000] = 34;
+
+	m[1] = 46;
+
+	m[10000000] = 199;
+
+	//map<int, int>::iterator it3 = m.begin();
+
+	cout << "\n";
+	for (auto it : m)
+	{
+		cout<< it.first << " " << it.second <<"\n";
+	}
+
+	map<string, vector<int> > ms;
+
+	ms["hello"].push_back(1);
+	ms["hello"].push_back(1);
+	ms["hello"].push_back(2);
+	ms["hello"].push_back(1);
+	ms["hello"].push_back(3);
+	ms["hello"].push_back(1);
+	ms["hello"].push_back(4);
+	ms["hello"].push_back(5);
+	ms["hello"].push_back(1);
+
+
+	unordered_map<int, int> um;
+	um[2] = 10;
+	um[10] = um[2] * um[2];
+
+	um[100] = 10010;
+	um[100] += 10010;
+
+	um[2] = um[10];
+
+	cout << "\n";
+	for (auto it : um)
+	{
+		cout << it.first << " " << it.second << "\n";
+	}
 
 }
