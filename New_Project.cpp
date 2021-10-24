@@ -62,34 +62,77 @@ public:
 };
 
 
-ostream& operator<<(ostream& out, vector<int> v)
+int func()
 {
-	for (auto it : v)
-		out << it;
-
-	return out;
+	int a = 10;
+	return a;
 }
+
+
+int& func_amper()
+{
+	int a;
+	return a;
+}
+
+
+//
+//ostream& operator<<(ostream& out, vector<int> v)
+//{
+//	for (auto it : v)
+//		out << it;
+//
+//	return out;
+//}
 
 int main()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	vector<int> vv = { 3, 434, 3 , 43 };
-	cout << vv;
+	/*vector<int> vv = { 3, 434, 3 , 43 };
+	cout << vv;*/
 
-	int a = 5;
+	//new int[1000];
+	{
+		int& aa = func_amper();
 
-	int i(a);
+		aa = 100;
 
-	Base base2;
+		func_amper() = 200;
 
-	Base base("r2d2-5");
+		func_amper() = 10000;
 
-	base.Out();
+		cout << aa;
 
-	Child ch("000");
+		int a = 5;
 
-	ch.Out();
+		int i(a);
+	}
+
+	//{
+	//	//int& aa = func();
+
+	//	//func() = 100;
+
+	//	int aa = 100;
+
+	//	cout << aa;
+
+	//	int a = 5;
+
+	//	int i(a);
+	//}
+
+
+	//Base base2;
+
+	//Base base("r2d2-5");
+
+	//base.Out();
+
+	//Child ch("000");
+
+	//ch.Out();
 
 }
