@@ -11,87 +11,77 @@
 #include <map>
 #include <unordered_map>
 
-
 using namespace std;
+
+class Base
+{
+public:
+
+	string name;
+	string who = "Base";
+	int age;
+
+	Base() // По умолчания
+	{
+		name = "???";
+		age = 100;
+	}
+
+	Base(string n) : name(n), age(20)
+	{
+		//name = n;
+		//age = 20;
+	}
+
+	void Out()
+	{
+		cout << "\n" <<  name << " "<<age << " "<< who;
+	}
+
+	
+
+};
+
+
+
+class Child : public Base 
+{
+public:
+
+	Child(string n) //: v({2, 3, 4})
+	{
+		name = n;
+		age = 1;
+		v = {2, 3 ,4}; 
+		who = "Child";
+	}
+
+	vector<int> v;
+
+
+};
+
+
+
 
 int main()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-	map< int, int > um;
 
-	{
-		queue<int> pr;
+	int a = 5;
 
-		pr.push(10);
-		pr.push(10);
-		pr.push(11);
-		pr.push(10);
-		pr.push(10);
-		pr.push(90);
-		pr.push(10);
-		pr.push(9);
-		pr.push(9);
-		pr.push(10);
+	int i(a);
 
-		while (!pr.empty())
-		{
-			cout << pr.front() << " ";
-			pr.pop();
-		}
+	Base base2;
 
-	}
+	Base base("r2d2-5");
 
+	base.Out();
 
-	
-	{
-		cout << "\n Стек";
-		stack<int> pr;
+	Child ch("000");
 
-		pr.push(10);
-		pr.push(10);
-		pr.push(11);
-		pr.push(10);
-		pr.push(10);
-		pr.push(90);
-		pr.push(10);
-		pr.push(9);
-		pr.push(9);
-		pr.push(10);
-
-		while (!pr.empty())
-		{
-			cout << pr.top() << " ";
-			pr.pop();
-		}
-
-	}
-
-	cout << "\n priority_queue";
-
-	priority_queue<int> pr;
-
-	pr.push(10);
-	pr.push(10);
-	pr.push(11);
-	pr.push(10);
-	pr.push(10);
-	pr.push(90);
-	pr.push(10);
-	pr.push(9);
-	pr.push(9);
-	pr.push(10);
-
-	while (!pr.empty())
-	{
-		cout << pr.top() << " ";
-		pr.pop();
-	}
-
-
-
-
-
+	ch.Out();
 
 }
