@@ -12,14 +12,15 @@ using namespace std;
 //	return out;
 //}
 
+enum Type { _int, _char, _string };
+
 struct Node
 {
-	enum {_int, _char, _string} type;
+	Type type;
 
 	//const int _int = 0;
 	//const int _char = 1;
 	//const int _string = 2;
-
 };
 
 struct Int: Node
@@ -37,8 +38,16 @@ struct Char : Node
 struct String : Node
 {
 	string data;
+	String(string data)
+	{
+		this->data;
+	}
 	string& out() { return data; }
 };
+
+
+
+
 
 //
 //
@@ -70,26 +79,27 @@ int main()
 
 	srand(time(0));
 
+
 	for (int i = 0; i < n; ++i)
 	{
+		int type;
+		cin >> type;
+		switch (type)
+		{
+		case Type::_int :
+			mas[i] = new Int;
+			break;
+		case Type::_char:
+			mas[i] = new Char;
+			break;
+		case Type::_string:
+			string s;
+			mas[i] = new String(s);
+			break;
+		}
+
 
 	}
-
-
-
-	//vector<All> v(2);
-
-	//v[0].data1 = 1;
-	//v[0].type = 0;
-
-	//v[1].data3 = "36565";
-	//v[1].type = 2;
-
-
-	//for (int i = 0; i < 2; ++i)
-	//{
-
-	//}
 
 
 
