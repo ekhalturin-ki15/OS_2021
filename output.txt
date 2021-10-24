@@ -1,0 +1,13 @@
+
+&&& -1 Child
+ vector: 0 0 0 
+??? 100 Base
+&&& -1 Child
+
+
+strund 
+{
+	int 1
+	char ---
+	string ---
+}
