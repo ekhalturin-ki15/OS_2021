@@ -48,6 +48,14 @@ class Child : public Base
 {
 public:
 
+	Child()
+	{
+		name = "&&&";
+		age = -1;
+		v = { 0, 0 ,0 };
+		who = "Child";
+	}
+
 	Child(string n) //: v({2, 3, 4})
 	{
 		name = n;
@@ -62,19 +70,6 @@ public:
 };
 
 
-int func()
-{
-	int a = 10;
-	return a;
-}
-
-
-int& func_amper()
-{
-	int a;
-	return a;
-}
-
 
 //
 //ostream& operator<<(ostream& out, vector<int> v)
@@ -85,54 +80,56 @@ int& func_amper()
 //	return out;
 //}
 
+
+
 int main()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
+ 
+
+	//Child ch;
+
+	//ch.Out();
+
+	Base* b;
+
+	b = new Base;
+
+	b->Out();
+
+	delete b;
+
+	b = new Child;
+
+	b->Out();
+
+	delete b;
+
+
+
+	//func<float>(1.00);
+	//func<int>(100);
 
 	/*vector<int> vv = { 3, 434, 3 , 43 };
 	cout << vv;*/
 
 	//new int[1000];
-	{
-		int& aa = func_amper();
-
-		aa = 100;
-
-		func_amper() = 200;
-
-		func_amper() = 10000;
-
-		cout << aa;
-
-		int a = 5;
-
-		int i(a);
-	}
-
 	//{
-	//	//int& aa = func();
+	//	//int& aa = func_amper();
 
-	//	//func() = 100;
+	//	//aa = 100;
 
-	//	int aa = 100;
+	//	func_amper() = 200;
 
-	//	cout << aa;
+	//	func_amper() = 10000;
+
+	//	cout << func_amper();
 
 	//	int a = 5;
 
 	//	int i(a);
 	//}
 
-
-	//Base base2;
-
-	//Base base("r2d2-5");
-
-	//base.Out();
-
-	//Child ch("000");
-
-	//ch.Out();
 
 }
