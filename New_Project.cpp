@@ -1,19 +1,10 @@
 #include <iostream>
-#include <vector>
 #include <string>
-#include <fstream>
-#include <algorithm>
-#include <list>
-#include <forward_list>
-#include <queue>
-#include <stack>
-#include <set>
-#include <map>
-#include <unordered_map>
+#include <vector>
 
 using namespace std;
 
-class Base
+struct Base
 {
 public:
 
@@ -44,7 +35,7 @@ public:
 
 
 
-class Child : public Base 
+struct Child : public Base 
 {
 public:
 
@@ -64,14 +55,21 @@ public:
 		who = "Child";
 	}
 
+	void Out()
+	{
+		cout << "\n" << name << " " << age << " " << who << "\n";
+
+		cout << " vector: ";  for (auto it : v) cout << it << " ";
+
+	}
+
+
 	vector<int> v;
-
-
 };
 
 
 
-//
+
 //ostream& operator<<(ostream& out, vector<int> v)
 //{
 //	for (auto it : v)
@@ -92,6 +90,14 @@ int main()
 
 	//ch.Out();
 
+
+	Child ch;
+
+	ch.Out();
+
+
+
+
 	Base* b;
 
 	b = new Base;
@@ -105,6 +111,39 @@ int main()
 	b->Out();
 
 	delete b;
+
+	const int size = 10;
+	void* v[size];
+
+	//{1, 1, 2 ,"cf", 32, 'a' , 'd', 'g'}
+
+	srand(time(0));
+	
+	for (int i = 0; i < size; ++i)
+	{
+		int r = rand() % 2;
+
+		if (r == 0)
+		{
+			v[i] = new Child(to_string(i));
+			//cout << *v[i];
+		}
+		else
+		{
+			v[i] = new Base(to_string(i));
+		}
+
+	}
+
+
+	for (int i = 0; i < size; ++i)
+	{
+		static_cast<Child*>(v[i])->Out();
+	}
+
+
+	string a;
+	while (cin >> a);
 
 
 
