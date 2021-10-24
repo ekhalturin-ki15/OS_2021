@@ -62,13 +62,21 @@ public:
 };
 
 
+ostream& operator<<(ostream& out, vector<int> v)
+{
+	for (auto it : v)
+		out << it;
 
+	return out;
+}
 
 int main()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
+	vector<int> vv = { 3, 434, 3 , 43 };
+	cout << vv;
 
 	int a = 5;
 
