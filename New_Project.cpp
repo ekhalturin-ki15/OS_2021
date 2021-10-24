@@ -19,24 +19,75 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 
-		deque<int> d;
+	map< int, int > um;
 
-		vector<int> v;
+	{
+		queue<int> pr;
 
-		map< vector<int>, char>  j; j[{1, 3, 4}] = '2';
+		pr.push(10);
+		pr.push(10);
+		pr.push(11);
+		pr.push(10);
+		pr.push(10);
+		pr.push(90);
+		pr.push(10);
+		pr.push(9);
+		pr.push(9);
+		pr.push(10);
 
-		set<pair<int, char>> ss;
+		while (!pr.empty())
+		{
+			cout << pr.front() << " ";
+			pr.pop();
+		}
 
-		multiset<char> ms;
-
-		list<int>l;
-
-		stack<int> s;
-
-		string st;
+	}
 
 
+	
+	{
+		cout << "\n Стек";
+		stack<int> pr;
 
+		pr.push(10);
+		pr.push(10);
+		pr.push(11);
+		pr.push(10);
+		pr.push(10);
+		pr.push(90);
+		pr.push(10);
+		pr.push(9);
+		pr.push(9);
+		pr.push(10);
+
+		while (!pr.empty())
+		{
+			cout << pr.top() << " ";
+			pr.pop();
+		}
+
+	}
+
+	cout << "\n priority_queue";
+
+	priority_queue<int> pr;
+
+	pr.push(10);
+	pr.push(10);
+	pr.push(11);
+	pr.push(10);
+	pr.push(10);
+	pr.push(90);
+	pr.push(10);
+	pr.push(9);
+	pr.push(9);
+	pr.push(10);
+
+	while (!pr.empty())
+	{
+		cout << pr.top() << " ";
+		pr.pop();
+	}
 
 
 
