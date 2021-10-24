@@ -69,6 +69,14 @@ public:
 
 
 
+struct Grandson : public Child
+{
+public:
+
+
+};
+
+
 
 //ostream& operator<<(ostream& out, vector<int> v)
 //{
@@ -130,7 +138,7 @@ int main()
 		}
 		else
 		{
-			v[i] = new Base(to_string(i));
+			//v[i] = new Base(to_string(i));
 		}
 
 	}
@@ -138,37 +146,17 @@ int main()
 
 	for (int i = 0; i < size; ++i)
 	{
-		static_cast<Child*>(v[i])->Out();
+		(*(static_cast<Grandson*>(v[i]))).Out();
+
+
+
+
+		// ->   ~	*().
 	}
 
 
-	string a;
-	while (cin >> a);
+	//float f = 1 / (string)(5);
 
 
-
-	//func<float>(1.00);
-	//func<int>(100);
-
-	/*vector<int> vv = { 3, 434, 3 , 43 };
-	cout << vv;*/
-
-	//new int[1000];
-	//{
-	//	//int& aa = func_amper();
-
-	//	//aa = 100;
-
-	//	func_amper() = 200;
-
-	//	func_amper() = 10000;
-
-	//	cout << func_amper();
-
-	//	int a = 5;
-
-	//	int i(a);
-	//}
-
-
+	//Unit test 
 }
