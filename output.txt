@@ -1,13 +1,1 @@
-
-&&& -1 Child
- vector: 0 0 0 
-??? 100 Base
-&&& -1 Child
-
-
-strund 
-{
-	int 1
-	char ---
-	string ---
-}
+2 34 A hello jort 99 O 10 B ZZZZZZZZzzzZzZZZZZzZ 

@@ -12,11 +12,12 @@ using namespace std;
 //	return out;
 //}
 
-enum Type { _int, _char, _string };
+enum Type { _int = 0, _char, _string };
 
 struct Node
 {
 	Type type;
+
 
 	//const int _int = 0;
 	//const int _char = 1;
@@ -26,12 +27,20 @@ struct Node
 struct Int: Node
 {
 	int data;
+	Int(int data)
+	{
+		this->data = data;
+	}
 	int& out() { return data; }
 };
 
 struct Char : Node
 {
 	char data;
+	Char(char data)
+	{
+		this->data = data;
+	}
 	char& out() { return data; }
 };
 
@@ -40,12 +49,10 @@ struct String : Node
 	string data;
 	String(string data)
 	{
-		this->data;
+		this->data = data;
 	}
 	string& out() { return data; }
 };
-
-
 
 
 
@@ -79,25 +86,39 @@ int main()
 
 	srand(time(0));
 
-
 	for (int i = 0; i < n; ++i)
 	{
 		int type;
 		cin >> type;
+		
 		switch (type)
 		{
-		case Type::_int :
-			mas[i] = new Int;
+		case Type::_int:
+			int j;
+			cin >> j;
+			mas[i] = new Int(j);
 			break;
 		case Type::_char:
-			mas[i] = new Char;
+			char ch; cin >> ch;
+			mas[i] = new Char(ch);
 			break;
 		case Type::_string:
-			string s;
+			string s; cin >> s;
 			mas[i] = new String(s);
 			break;
 		}
 
+
+		//int ii = Type::_string;
+		mas[i]->type = static_cast<Type>(type);
+	}
+
+
+	for (int i = 0; i < n; ++i)
+	{
+		if (mas[i]->type == Type::_int) cout << static_cast<Int*>(mas[i])->data<< " ";
+		if (mas[i]->type == Type::_char) cout << static_cast<Char*>(mas[i])->data << " ";
+		if (mas[i]->type == Type::_string) cout << static_cast<String*>(mas[i])->data << " ";
 
 	}
 
